@@ -10,3 +10,6 @@ class Post(models.Model):
     #akta post multiple categori ar moddha thakte pare abr akta category multiple post thakte pare
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     # author ar account delete kora hola tar post gula automatic delete hoea jabe
+
+    def __str__(self) -> str:
+        return self.title
