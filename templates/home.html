@@ -8,14 +8,15 @@
         <div class="card-body">
             <h5 class="card-title">{{post.title}}</h5>
             <p class="card-text">{{post.content}}</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
             <p class='card-text'>Author : {{post.author.name}}</p>
             <p>
                 Category : 
-                    {% for cat in post.category.all %}
-                        <button class='btn btn-warning disabled rounded rounded-3'>{{cat.name}}</button>
-                    {% endfor%}
+                {% for cat in post.category.all %}
+                <button class='btn btn-primary btn-sm disabled rounded rounded-3'>{{cat.name}}</button>
+                {% endfor%}
             </p>
+            <a href="{% url 'edit_post' post.id%}" class="btn btn-warning">Edit</a>
+            <a href="#" class="btn btn-danger">Delete</a>
         </div>
         </div>
     </div>
